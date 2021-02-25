@@ -2,7 +2,14 @@
 
 A .Net SDK for Version 3 of the ActiveCampaign API created by [Heather Floyd](https://www.HeatherFloyd.com).
 
+## No Warranty ##
+
+The development of this library is not materially supported by ActiveCampaign, and I am not affiliated with ActiveCampaign, except as a customer. You are welcome to use this library, but I provide no warranty on the fitness of this for your purposes, nor for performance, etc. USE THIS IN YOUR PRODUCTION PROJECTS AT YOUR OWN RISK. I welcome pull requests that complete missing functionality and improve the codebase.
+
 ## Installation ##
+
+This is currently pre-release and not available on NuGet yet. In order to test the library in your own site, clone and compile, then use the generated .dll in your project.
+
 [![Nuget Downloads](https://buildstats.info/nuget/Dragonfly.Dragonfly.ActiveCampaignV3Api)](https://www.nuget.org/packages/Dragonfly.ActiveCampaign/)
 
      PM>   Install-Package Dragonfly.ActiveCampaignV3Api
@@ -71,25 +78,28 @@ TBD
 
 Generally, the structure is based on three types of code:
 
-###1 - AC Object Models ###
+### 1 - AC Object Models ###
 
 The **"Models" folder** includes various subfolders to organize all the individual object models. Most are marked up with with JSON attributes to handle Deserialization from the JSON response data returned by the API. Primarily these are based on various JSON responses directly provided by the API calls. 
 
 The classes in the ApiClient folder are discussed in #2, below.
 
 	
-###2 - AC Connection/Request/Response/Result ###
+### 2 - AC Connection/Request/Response/Result ###
 
 **2.1 - Models/ApiClient**
+
 Base models for connecting to the AC API, sending a Request, and processing the Response.
 
 **2.2 - Queries**
+
 Specific 'Request' implementations designed to retrieve data and return it cast to the appropriate object model.
 
 **2.3 - Commands**
+
 Specific 'Request' implementations designed to create/edit/delete data.
 
-###3 - General ###
+### 3 - General ###
 
 	1. Extensions
 	2. Helpers
