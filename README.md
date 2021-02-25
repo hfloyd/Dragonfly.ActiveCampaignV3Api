@@ -7,14 +7,13 @@ A .Net SDK for Version 3 of the ActiveCampaign API created by [Heather Floyd](ht
 
      PM>   Install-Package Dragonfly.ActiveCampaignV3Api
 
-
 ## Features ##
 
 This .Net SDK makes it straight-forward to connect to the AC API to retrieve data and send commands that change data.
 
 **Still to Implement:**
 - Some models are missing because I didn't have JSON example data to use from my own account.
-- Implementing Query and Command Requests is a time-consuming process, so there are still many API features missing. A full list of the API functions and the associated SDK status is located in the TODO.md file.
+- Implementing Query and Command Requests is a time-consuming process, so there are still many API features missing. A full list of the API functions and the associated SDK status is located in the [TODO.md](https://github.com/hfloyd/Dragonfly.ActiveCampaignV3Api/blob/master/TODO.md) file.
 
 ## Usage ##
 
@@ -97,6 +96,6 @@ Specific 'Request' implementations designed to create/edit/delete data.
 
 ## Resources ##
 
-GitHub Repository: [https://github.com/hfloyd/Dragonfly.Dragonfly.ActiveCampaignV3Api](https://github.com/hfloyd/Dragonfly.Dragonfly.ActiveCampaignV3Api)
+GitHub Repository: [https://github.com/hfloyd/Dragonfly.ActiveCampaignV3Api](https://github.com/hfloyd/Dragonfly.ActiveCampaignV3Api)
 
 [ActiveCampaign API Documentation](https://developers.activecampaign.com/reference)
