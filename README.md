@@ -39,8 +39,8 @@ Examples:
 	var reqContact = new ContactRequest(acConn);
     
 	//Tell the request to sideload additional data (you can add as many as desired)
-	reqContact.IncludeExtraData.Add(Contact.LinkedData.Notes);
-    reqContact.IncludeExtraData.Add(Contact.LinkedData.FieldValues);
+	reqContact.IncludeExtraData.Add(ContactsList.LinkedData.Notes);
+    reqContact.IncludeExtraData.Add(ContactsList.LinkedData.FieldValues);
 
 	//Get a single contact by Email address
     reqContact.GetSingle("me@domain.com");

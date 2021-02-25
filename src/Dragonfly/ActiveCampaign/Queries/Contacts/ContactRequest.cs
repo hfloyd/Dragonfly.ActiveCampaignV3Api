@@ -121,7 +121,7 @@ namespace Dragonfly.ActiveCampaign.Queries
         /// <summary>
         /// Sideload additional LinkedData in the result
         /// </summary>
-        public List<Contact.LinkedData> IncludeExtraData { get; set; }
+        public List<ContactsList.LinkedData> IncludeExtraData { get; set; }
 
         /*
         //TODO: Figure out how to handle formatting these sorts of Query String params (custom Attributes?)
@@ -174,7 +174,7 @@ namespace Dragonfly.ActiveCampaign.Queries
 
         public ContactRequest(ActiveCampaignConnection Connection) : base(Connection)
         {
-            this.IncludeExtraData = new List<Contact.LinkedData>();
+            this.IncludeExtraData = new List<ContactsList.LinkedData>();
         }
 
         #region Filtering
@@ -262,7 +262,7 @@ namespace Dragonfly.ActiveCampaign.Queries
 
         internal override IEnumerable<string> LinkedDataParams()
         {
-            return Contact.GetLinkedDataParamsList(this.IncludeExtraData);
+            return ContactsList.GetLinkedDataParamsList(this.IncludeExtraData);
         }
 
         #endregion

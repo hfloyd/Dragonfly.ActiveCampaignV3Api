@@ -76,7 +76,97 @@
         [JsonProperty("trackingLogs")]
         public List<TrackingLog> TrackingLogs { get; set; }
 
+        #region Sideloading Params
+
+        public enum LinkedData
+        {
+            BounceLogs,
+            ContactAutomations,
+            ContactData,
+            ContactGoals,
+            ContactLists,
+            ContactLogs,
+            ContactTags,
+            ContactDeals,
+            Deals,
+            FieldValues,
+            GeoIps,
+            Notes,
+            Organization,
+            PlusAppend,
+            TrackingLogs,
+            ScoreValues
+        }
+
+        internal static IEnumerable<string> GetLinkedDataParamsList(IEnumerable<ContactsList.LinkedData> DataList)
+        {
+            var list = new List<string>();
+
+            foreach (var item in DataList)
+            {
+                switch (item)
+                {
+                    case LinkedData.BounceLogs:
+                        list.Add("bounceLogs");
+                        break;
+                    case LinkedData.ContactAutomations:
+                        list.Add("contactAutomations.automation");
+                        break;
+                    case LinkedData.ContactData:
+                        list.Add("contactData");
+                        break;
+                    case LinkedData.ContactGoals:
+                        list.Add("contactGoals");
+                        break;
+                    case LinkedData.ContactLists:
+                        list.Add("contactLists.list");
+                        break;
+                    case LinkedData.ContactLogs:
+                        list.Add("contactLogs");
+                        break;
+                    case LinkedData.ContactTags:
+                        list.Add("contactTags.tag");
+                        break;
+                    case LinkedData.ContactDeals:
+                        list.Add("contactDeals");
+                        break;
+                    case LinkedData.Deals:
+                        list.Add("deals");
+                        break;
+                    case LinkedData.FieldValues:
+                        list.Add("fieldValues.field");
+                        break;
+                    case LinkedData.GeoIps:
+                        list.Add("geoIps.geoAddress");
+                        break;
+                    case LinkedData.Notes:
+                        list.Add("notes");
+                        break;
+                    case LinkedData.Organization:
+                        list.Add("organization");
+                        break;
+                    case LinkedData.PlusAppend:
+                        list.Add("plusAppend");
+                        break;
+                    case LinkedData.TrackingLogs:
+                        list.Add("trackingLogs");
+                        break;
+                    case LinkedData.ScoreValues:
+                        list.Add("scoreValues.score");
+                        break;
+                    //case LinkedData.AutomationEntryCounts:
+                    //    list.Add("automationEntryCounts");
+                    //    break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+
+            return list;
+        }
+
+        #endregion
     }
-    
+
 
 }
