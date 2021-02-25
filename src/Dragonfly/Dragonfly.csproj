@@ -1,0 +1,92 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Copyright>Heather Floyd [www.HeatherFloyd.com]</Copyright>
+    <RepositoryType>GIT</RepositoryType>
+    <Authors>Heather Floyd</Authors>
+    <Company></Company>
+    <Product>Dragonfly</Product>
+    <Description>.Net SDK for the ActiveCampaign API Version 3</Description>
+    <PackageLicenseUrl>https://github.com/hfloyd/Dragonfly.ActiveCampaign/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/hfloyd/Dragonfly.ActiveCampaignV3Api</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hfloyd/Dragonfly.ActiveCampaignV3Api</RepositoryUrl>
+    <PackageId>Dragonfly.ActiveCampaignV3Api</PackageId>
+    <Version>0.0.10</Version>
+    <AssemblyName>Dragonfly.ActiveCampaignV3Api</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="ActiveCampaign\Commanding\**" />
+    <Compile Remove="ActiveCampaign\Commands\Commanding\**" />
+    <Compile Remove="ActiveCampaign\Commands\List\**" />
+    <Compile Remove="ActiveCampaign\Commands\xCommanding\**" />
+    <Compile Remove="ActiveCampaign\Queries\Account\**" />
+    <Compile Remove="ActiveCampaign\Queries\Automations\**" />
+    <Compile Remove="ActiveCampaign\Queries\Automation\**" />
+    <Compile Remove="ActiveCampaign\Queries\List\**" />
+    <Compile Remove="ActiveCampaign\Queries\Query\**" />
+    <Compile Remove="ActiveCampaign\Queries\xQuery\**" />
+    <Compile Remove="ActiveCampaign\Query\**" />
+    <EmbeddedResource Remove="ActiveCampaign\Commanding\**" />
+    <EmbeddedResource Remove="ActiveCampaign\Commands\Commanding\**" />
+    <EmbeddedResource Remove="ActiveCampaign\Commands\List\**" />
+    <EmbeddedResource Remove="ActiveCampaign\Commands\xCommanding\**" />
+    <EmbeddedResource Remove="ActiveCampaign\Queries\Account\**" />
+    <EmbeddedResource Remove="ActiveCampaign\Queries\Automations\**" />
+    <EmbeddedResource Remove="ActiveCampaign\Queries\Automation\**" />
+    <EmbeddedResource Remove="ActiveCampaign\Queries\List\**" />
+    <EmbeddedResource Remove="ActiveCampaign\Queries\Query\**" />
+    <EmbeddedResource Remove="ActiveCampaign\Queries\xQuery\**" />
+    <EmbeddedResource Remove="ActiveCampaign\Query\**" />
+    <None Remove="ActiveCampaign\Commanding\**" />
+    <None Remove="ActiveCampaign\Commands\Commanding\**" />
+    <None Remove="ActiveCampaign\Commands\List\**" />
+    <None Remove="ActiveCampaign\Commands\xCommanding\**" />
+    <None Remove="ActiveCampaign\Queries\Account\**" />
+    <None Remove="ActiveCampaign\Queries\Automations\**" />
+    <None Remove="ActiveCampaign\Queries\Automation\**" />
+    <None Remove="ActiveCampaign\Queries\List\**" />
+    <None Remove="ActiveCampaign\Queries\Query\**" />
+    <None Remove="ActiveCampaign\Queries\xQuery\**" />
+    <None Remove="ActiveCampaign\Query\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ActiveCampaign\Commands\Contacts\AddContactCommand.cs" />
+    <Compile Remove="ActiveCampaign\Commands\Contacts\AddTagsCommand.cs" />
+    <Compile Remove="ActiveCampaign\Commands\Contacts\DeleteContactCommand.cs" />
+    <Compile Remove="ActiveCampaign\Commands\Contacts\RemoveTagsCommand.cs" />
+    <Compile Remove="ActiveCampaign\Models\ApiClient\xActiveCampaignRestClient.cs" />
+    <Compile Remove="ActiveCampaign\Models\Automations\xAutomationCommandingClient.cs" />
+    <Compile Remove="ActiveCampaign\Models\Automations\xAutomationContact.cs" />
+    <Compile Remove="ActiveCampaign\Models\Automations\xAutomations.cs" />
+    <Compile Remove="ActiveCampaign\Models\Automations\xIAutomationCommandingClient.cs" />
+    <Compile Remove="ActiveCampaign\Commands\AddContactCommand.cs" />
+    <Compile Remove="ActiveCampaign\Commands\AddTagsCommand.cs" />
+    <Compile Remove="ActiveCampaign\Commands\DeleteContactCommand.cs" />
+    <Compile Remove="ActiveCampaign\Commands\RemoveTagsCommand.cs" />
+    <Compile Remove="ActiveCampaign\Models\Contacts\Contact2.cs" />
+    <Compile Remove="ActiveCampaign\Queries\ContactQueryClient.cs" />
+    <Compile Remove="ActiveCampaign\Models\Contacts\xContacts.cs" />
+    <Compile Remove="ActiveCampaign\Queries\Contacts\xPaginatedContactRequest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ActiveCampaign\Commands\CustomFields\" />
+    <Folder Include="ActiveCampaign\Commands\Account\" />
+  </ItemGroup>
+
+  <Import Project="..\Custom.targets" />
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="XCOPY /s /y &quot;$(TargetDir)$(TargetName).*&quot; &quot;C:\Users\Heather\NAS Folders\Active Projects\Webs\BF Sites\sourcecode-child-BFSites\BFSites.Web\bin&quot;" />
+  </Target>
+</Project>
