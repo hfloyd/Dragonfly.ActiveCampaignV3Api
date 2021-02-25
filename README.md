@@ -61,6 +61,7 @@ Examples:
 
 
 ### ActiveCampaignService ###
+
 Allows for simpler access to common functionality.
 
 Examples:
@@ -70,15 +71,16 @@ TBD
 
 Generally, the structure is based on three types of code:
 
-###1 - AC Object Models###
+###1 - AC Object Models ###
+
 The **"Models" folder** includes various subfolders to organize all the individual object models. Most are marked up with with JSON attributes to handle Deserialization from the JSON response data returned by the API. Primarily these are based on various JSON responses directly provided by the API calls. 
 
 The classes in the ApiClient folder are discussed in #2, below.
 
 	
 ###2 - AC Connection/Request/Response/Result ###
-**2.1 - Models/ApiClient**
 
+**2.1 - Models/ApiClient**
 Base models for connecting to the AC API, sending a Request, and processing the Response.
 
 **2.2 - Queries**
@@ -87,7 +89,8 @@ Specific 'Request' implementations designed to retrieve data and return it cast 
 **2.3 - Commands**
 Specific 'Request' implementations designed to create/edit/delete data.
 
-###3 - General###
+###3 - General ###
+
 	1. Extensions
 	2. Helpers
 	3. Services
