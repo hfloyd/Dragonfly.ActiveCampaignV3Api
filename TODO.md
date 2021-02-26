@@ -8,16 +8,16 @@ The 'Features' section lists all the API functions available, with links to the 
 Icons and notes explain the current status of each feature:
 - ✔ = The implementation is complete
 - 🛠 = Implementation in progress
-- ⚠ = Some issues need to be resolved
+- ⚠ = Some issues need to be resolved (most likely due to not having enough functionality in my account for testing)
 
 ## Features ##
 
 ### Accounts
 
 - [Accounts](https://developers.activecampaign.com/reference#accounts)
-	- Queries:
-		- [get : Retrieve an account](https://developers.activecampaign.com/reference#retrieve-an-account)
-		- [get : List all accounts](https://developers.activecampaign.com/reference#list-all-accounts)
+	- Queries: *\Queries\Accounts\AccountRequest.cs*
+		- ⚠ [get : Retrieve an account](https://developers.activecampaign.com/reference#retrieve-an-account) {Need AccountsList model example}
+		- ⚠ [get : List all accounts](https://developers.activecampaign.com/reference#list-all-accounts) {Need AccountsList model example}
 	- Commands:
 		- [post : Create an  account](https://developers.activecampaign.com/reference#create-an-account-new)
 		- [put : Update an  account](https://developers.activecampaign.com/reference#update-an-account-new)
@@ -26,25 +26,25 @@ Icons and notes explain the current status of each feature:
 		- [put : Update an account note](https://developers.activecampaign.com/reference#update-a-account-note)
 		- [delete : Bulk delete accounts](https://developers.activecampaign.com/reference#bulk-delete-accounts)
 - [Account Contact Association](https://developers.activecampaign.com/reference#account-contacts)
-	- Queries: \Queries\
-		- [get : Retrieve an association](https://developers.activecampaign.com/reference#retrieve-an-association)
-		- [get : List all associations](https://developers.activecampaign.com/reference#list-all-associations-1)
+	- Queries: *\Queries\Accounts\AccountContactRequest.cs*
+		- ⚠ [get : Retrieve an association](https://developers.activecampaign.com/reference#retrieve-an-association) {Need AccountContactsList model example}
+		- ⚠ [get : List all associations](https://developers.activecampaign.com/reference#list-all-associations-1) {Need AccountContactsList model example}
 	- Commands:
 		- [post : Create an association](https://developers.activecampaign.com/reference#create-an-account-1)
 		- [put : Update an association](https://developers.activecampaign.com/reference#update-an-association-1)
 		- [delete : Delete an association](https://developers.activecampaign.com/reference#delete-an-association-1)
 - [Custom Account Fields](https://developers.activecampaign.com/reference#custom-account-fields-1)
-	- Queries: \Queries\
-		- [get : List all custom fields](https://developers.activecampaign.com/reference#list-all-custom-fields)
-		- [get : Retrieve a custom field](https://developers.activecampaign.com/reference#retrieve-a-custom-field)
+	- Queries: *\Queries\Accounts\AccountCustomFieldRequest.cs*
+		- ⚠ [get : List all custom fields](https://developers.activecampaign.com/reference#list-all-custom-fields) {Need AccountCustomFieldMetaList model example}
+		- ⚠ [get : Retrieve a custom field](https://developers.activecampaign.com/reference#retrieve-a-custom-field) {Need AccountCustomFieldMetaList model example}
 	- Commands:
 		- [post : Create a custom field](https://developers.activecampaign.com/reference#create-a-custom-field)
 		- [put : Update a custom field](https://developers.activecampaign.com/reference#update-a-custom-field)
 		- [delete : Delete a custom field](https://developers.activecampaign.com/reference#delete-a-custom-field)
 - [Custom Account Field Values](https://developers.activecampaign.com/reference#custom-account-field-values)
-	- Queries: \Queries\
-		- [get : List all custom field values](https://developers.activecampaign.com/reference#list-all-custom-field-values-2)
-		- [get : Retrieve a custom field value](https://developers.activecampaign.com/reference#retrieve-a-custom-field-value)
+	- Queries: *\Queries\Accounts\AccountCustomFieldDataRequest.cs*
+		- ⚠ [get : List all custom field values](https://developers.activecampaign.com/reference#list-all-custom-field-values-2) {Need AccountCustomFieldDataList model example}
+		- ⚠ [get : Retrieve a custom field value](https://developers.activecampaign.com/reference#retrieve-a-custom-field-value) {Need AccountCustomFieldDataList model example}
 	- Commands:
 		- [post : Create a custom field value](https://developers.activecampaign.com/reference#create-a-custom-field-value-1)
 		- [post : Bulk create a custom field value](https://developers.activecampaign.com/reference#bulk-create-a-custom-field-value-1)
@@ -55,9 +55,9 @@ Icons and notes explain the current status of each feature:
 ### Addresses
 
 - [Addresses](https://developers.activecampaign.com/reference#address)
-	- Queries: \Queries\
-		- [get : Retrieve an address](https://developers.activecampaign.com/reference#retrieve-an-address)
-		- [get : List all addresses](https://developers.activecampaign.com/reference#list-all-addresses)
+	- Queries:* \Queries\Addresses\AddressRequest.cs*
+		- 🛠 [get : Retrieve an address](https://developers.activecampaign.com/reference#retrieve-an-address)
+		- 🛠 [get : List all addresses](https://developers.activecampaign.com/reference#list-all-addresses)
 	- Commands:
 		- [post : Create an address](https://developers.activecampaign.com/reference#testinput)
 		- [put : Update an address](https://developers.activecampaign.com/reference#update-an-address-2)
@@ -68,24 +68,24 @@ Icons and notes explain the current status of each feature:
 ### Automations
 
 - [Automations](https://developers.activecampaign.com/reference#automation)
-	- Queries: \Queries\
-		- [get : List all automations](https://developers.activecampaign.com/reference#list-all-automations)
+	- Queries: *\Queries\Automations\AutomationRequest.cs*
+		-🛠 [get : List all automations](https://developers.activecampaign.com/reference#list-all-automations)
 
 ### Branding
 
 - [Branding](https://developers.activecampaign.com/reference#branding)
-	- Queries: \Queries\
-		- [get : List all brandings](https://developers.activecampaign.com/reference#brandings)
-		- [get : Retrieve a branding](https://developers.activecampaign.com/reference#get-branding)
+	- Queries: *\Queries\Branding\BrandingRequest.cs*
+		- ⚠ [get : List all brandings](https://developers.activecampaign.com/reference#brandings) {Need BrandingList model example}
+		- ⚠ [get : Retrieve a branding](https://developers.activecampaign.com/reference#get-branding) {Need BrandingList model example}
 	- Commands:
 		- [put : Update a branding](https://developers.activecampaign.com/reference#update-branding)
 
 ### Calendar Feeds
 
 - [Calendar Feeds](https://developers.activecampaign.com/reference#calendar-feeds)
-	- Queries: \Queries\
-		- [get : List all calendar feeds](https://developers.activecampaign.com/reference#list-all-calendar-feeds)
-		- [get : Retrieve a calendar feed](https://developers.activecampaign.com/reference#list-all-calendar-feeds-1)
+	- Queries: *\Queries\CalendarFeeds\CalendarFeedsRequest.cs*
+		- ⚠ [get : List all calendar feeds](https://developers.activecampaign.com/reference#list-all-calendar-feeds) {Need CalendarFeedsList model example}
+		- ⚠ [get : Retrieve a calendar feed](https://developers.activecampaign.com/reference#list-all-calendar-feeds-1) {Need CalendarFeedsList model example}
 	- Commands:
 		- [post : Create a calendar feed](https://developers.activecampaign.com/reference#create-a-calendar-feed)
 		- [put : Update a calendar feed](https://developers.activecampaign.com/reference#update-a-calendar-feed)
@@ -132,9 +132,9 @@ Icons and notes explain the current status of each feature:
 		- [post : Add a contact to an automation](https://developers.activecampaign.com/reference#create-new-contactautomation)
 		- [delete : Remove a contact from an automation](https://developers.activecampaign.com/reference#delete-a-contactautomation)
 - [Custom Fields](https://developers.activecampaign.com/reference#fields)
-	- Queries: \Queries\CustomFields\
-		- [get : Retrieve a custom field](https://developers.activecampaign.com/reference#retrieve-a-field)
-		- [get : List all custom fields](https://developers.activecampaign.com/reference#retrieve-fields-1)
+	- Queries: \Queries\CustomFields\CustomFieldRequest.cs
+		- ✔ [get : Retrieve a custom field](https://developers.activecampaign.com/reference#retrieve-a-field)
+		- ✔ [get : List all custom fields](https://developers.activecampaign.com/reference#retrieve-fields-1)
 	- Commands:
 		- [post : Create a custom field](https://developers.activecampaign.com/reference#retrieve-fields)
 		- [put : Update a custom field](https://developers.activecampaign.com/reference#update-a-field)

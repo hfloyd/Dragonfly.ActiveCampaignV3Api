@@ -44,8 +44,7 @@
             var result = Connection.ExecuteGetRequest<NotesList>(linkedUrl);
             return result;
         }
-
-       public ActiveCampaignResult<AccountCustomFieldDataList> GetAccountCustomFieldData(ActiveCampaignConnection Connection)
+        public ActiveCampaignResult<AccountCustomFieldDataList> GetAccountCustomFieldData(ActiveCampaignConnection Connection)
         {
             var linkedUrl = this.Links.AccountCustomFieldData.ToString();
             var result = Connection.ExecuteGetRequest<AccountCustomFieldDataList>(linkedUrl);

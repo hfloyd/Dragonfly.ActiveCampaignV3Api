@@ -58,7 +58,7 @@ Examples:
 	//Extract the various data from the Result
     var contacts = reqContact.Result.ResultData.Contacts;
 	var notes = reqContact.Result.ResultData.Notes; 
-	//NOTE: If you didn't explicitly sideload additional data (via the .IncludeExtraData option), the property will be NULL.	
+	//NOTE: If you didn't explicitly sideload additional data (via the .IncludeExtraData option), the property will be NULL. Except that AC automatically includes certain extra datasets with some standard requests, so it makes sense to check your result.	
 
 	//You can also drill-down into additional data if you don't have it in your initial dataset via sideloading
 	(these.'Get...()' methods make addition calls to the AC API)
@@ -94,6 +94,8 @@ Base models for connecting to the AC API, sending a Request, and processing the 
 **2.2 - Queries**
 
 Specific 'Request' implementations designed to retrieve data and return it cast to the appropriate object model.
+
+Generally, each main Model has one or more Query Request Classes. They follow a standard format, though individual Models have some differences, based on the API capabilities.
 
 **2.3 - Commands**
 

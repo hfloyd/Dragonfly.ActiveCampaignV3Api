@@ -411,36 +411,6 @@
        
         #endregion
 
-        #region Sideloading Params
-
-        //TODO: HOLD - Add Sideloading Params for CampaignRequest?
-        //public enum LinkedData
-        //{
-        //    BounceLogs,
-
-        //}
-
-        //internal static IEnumerable<string> GetLinkedDataParamsList(IEnumerable<XX.LinkedData> DataList)
-        //{
-        //    var list = new List<string>();
-
-        //    foreach (var item in DataList)
-        //    {
-        //        switch (item)
-        //        {
-        //            case LinkedData.BounceLogs:
-        //                list.Add("bounceLogs");
-        //                break;
-
-        //            default:
-        //                throw new ArgumentOutOfRangeException();
-        //        }
-        //    }
-
-        //    return list;
-        //}
-
-        #endregion
     }
 
     public class CampaignLinks

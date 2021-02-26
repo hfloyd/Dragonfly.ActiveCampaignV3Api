@@ -2,29 +2,34 @@
 {
     using System;
     using System.Collections.Generic;
-
-    using System.Globalization;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
-    //TODO: HOLD - Needs more JSON examples for AccountCustomFieldDataList
-    public class AccountCustomFieldDataList
+    public class CalendarFeedsList
     {
         [JsonProperty("meta")]
         public Meta Meta { get; set; }
 
-        [JsonProperty("accountCustomFieldDatum")]
-        public AccountCustomFieldDatum AccountCustomFieldDatum { get; set; }
+        [JsonProperty("calendars")]
+        public List<CalendarFeed> Calendars { get; set; }
+        
+        //TODO: HOLD - Needs more JSON examples for CalendarRels
+        [JsonProperty("calendarRels")]
+        public List<object> CalendarRels { get; set; }
 
-        [JsonProperty("accountCustomFieldData")]
-        public List<AccountCustomFieldDatum> AccountCustomFieldData { get; set; }
+        //TODO: HOLD - Needs more JSON examples for CalendarUsers
+        [JsonProperty("calendarUsers")]
+        public List<object> CalendarUsers { get; set; }
+
 
         #region Sideloading Params
 
         public enum LinkedData
         {
-            Account,
-            AccountCustomFields
+            CalendarRelations,
+            CalendarUsers
         }
 
         internal static IEnumerable<string> GetLinkedDataParamsList(IEnumerable<LinkedData> DataList)
@@ -35,11 +40,11 @@
             {
                 switch (item)
                 {
-                    case LinkedData.Account:
-                        list.Add("account");
+                    case LinkedData.CalendarRelations:
+                        list.Add("calendarRels");
                         break;
-                    case LinkedData.AccountCustomFields:
-                        list.Add("accountCustomFieldMetum");
+                    case LinkedData.CalendarUsers:
+                        list.Add("calendarUsers");
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -51,5 +56,4 @@
 
         #endregion
     }
-
 }

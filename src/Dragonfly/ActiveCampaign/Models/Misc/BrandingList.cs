@@ -2,29 +2,24 @@
 {
     using System;
     using System.Collections.Generic;
-
-    using System.Globalization;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
-    //TODO: HOLD - Needs more JSON examples for AccountCustomFieldDataList
-    public class AccountCustomFieldDataList
+    //TODO: HOLD - Needs more JSON examples for BrandingList
+    public class BrandingList
     {
         [JsonProperty("meta")]
         public Meta Meta { get; set; }
 
-        [JsonProperty("accountCustomFieldDatum")]
-        public AccountCustomFieldDatum AccountCustomFieldDatum { get; set; }
-
-        [JsonProperty("accountCustomFieldData")]
-        public List<AccountCustomFieldDatum> AccountCustomFieldData { get; set; }
-
         #region Sideloading Params
 
+        //TODO: Add Sideloading Params for BrandingList?
         public enum LinkedData
         {
-            Account,
-            AccountCustomFields
+            XX,
+
         }
 
         internal static IEnumerable<string> GetLinkedDataParamsList(IEnumerable<LinkedData> DataList)
@@ -35,12 +30,10 @@
             {
                 switch (item)
                 {
-                    case LinkedData.Account:
-                        list.Add("account");
+                    case LinkedData.XX:
+                        list.Add("xx");
                         break;
-                    case LinkedData.AccountCustomFields:
-                        list.Add("accountCustomFieldMetum");
-                        break;
+
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -51,5 +44,4 @@
 
         #endregion
     }
-
 }

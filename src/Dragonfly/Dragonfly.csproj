@@ -13,7 +13,7 @@
     <PackageProjectUrl>https://github.com/hfloyd/Dragonfly.ActiveCampaignV3Api</PackageProjectUrl>
     <RepositoryUrl>https://github.com/hfloyd/Dragonfly.ActiveCampaignV3Api</RepositoryUrl>
     <PackageId>Dragonfly.ActiveCampaignV3Api</PackageId>
-    <Version>0.0.10</Version>
+    <Version>0.0.11</Version>
     <AssemblyName>Dragonfly.ActiveCampaignV3Api</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
@@ -21,7 +21,6 @@
     <Compile Remove="ActiveCampaign\Commands\Commanding\**" />
     <Compile Remove="ActiveCampaign\Commands\List\**" />
     <Compile Remove="ActiveCampaign\Commands\xCommanding\**" />
-    <Compile Remove="ActiveCampaign\Queries\Account\**" />
     <Compile Remove="ActiveCampaign\Queries\Automations\**" />
     <Compile Remove="ActiveCampaign\Queries\Automation\**" />
     <Compile Remove="ActiveCampaign\Queries\List\**" />
@@ -32,7 +31,6 @@
     <EmbeddedResource Remove="ActiveCampaign\Commands\Commanding\**" />
     <EmbeddedResource Remove="ActiveCampaign\Commands\List\**" />
     <EmbeddedResource Remove="ActiveCampaign\Commands\xCommanding\**" />
-    <EmbeddedResource Remove="ActiveCampaign\Queries\Account\**" />
     <EmbeddedResource Remove="ActiveCampaign\Queries\Automations\**" />
     <EmbeddedResource Remove="ActiveCampaign\Queries\Automation\**" />
     <EmbeddedResource Remove="ActiveCampaign\Queries\List\**" />
@@ -43,7 +41,6 @@
     <None Remove="ActiveCampaign\Commands\Commanding\**" />
     <None Remove="ActiveCampaign\Commands\List\**" />
     <None Remove="ActiveCampaign\Commands\xCommanding\**" />
-    <None Remove="ActiveCampaign\Queries\Account\**" />
     <None Remove="ActiveCampaign\Queries\Automations\**" />
     <None Remove="ActiveCampaign\Queries\Automation\**" />
     <None Remove="ActiveCampaign\Queries\List\**" />
@@ -69,6 +66,9 @@
     <Compile Remove="ActiveCampaign\Queries\ContactQueryClient.cs" />
     <Compile Remove="ActiveCampaign\Models\Contacts\xContacts.cs" />
     <Compile Remove="ActiveCampaign\Queries\Contacts\xPaginatedContactRequest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveCampaign\Queries\Automations\AutomationRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />

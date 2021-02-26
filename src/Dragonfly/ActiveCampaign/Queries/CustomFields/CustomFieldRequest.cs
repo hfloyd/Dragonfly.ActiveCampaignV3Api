@@ -9,7 +9,7 @@
     using Dragonfly.ActiveCampaign.Models;
     using Newtonsoft.Json;
 
-    //  https://developers.activecampaign.com/reference?_ga=2.79471828.1564152.1611946105-1183065105.1584984488#retrieve-fields-1
+    //  https://developers.activecampaign.com/reference?#retrieve-fields-1
     public class CustomFieldRequest : ActiveCampaignRequest<FieldsList>
     {
         private string listEndPoint = "fields/?limit=100";
@@ -28,12 +28,11 @@
         /// <summary>
         /// Sideload additional LinkedData in the result
         /// </summary>
-        public List<Field.LinkedData> IncludeExtraData { get; set; }
+        public List<FieldsList.LinkedData> IncludeExtraData { get; set; }
 
         public CustomFieldRequest(ActiveCampaignConnection Connection) : base(Connection)
         {
-            this.IncludeExtraData = new List<Field.LinkedData>();
-
+            this.IncludeExtraData = new List<FieldsList.LinkedData>();
         }
 
         #region Filtering
@@ -48,16 +47,19 @@
             Reset();
 
             //Add filter fields
-            var jsonName = PropertyHelper<CustomFieldRequest>.GetJsonName(x => x.Id);
-            Fields.Add(jsonName, Id.ToString());
+            //var jsonName = PropertyHelper<CustomFieldRequest>.GetJsonName(x => x.Id);
+            //Fields.Add(jsonName, Id.ToString());
+
+            //Need to use route format
+            var reqUrl = $"{singleEndPoint}/{Id}";
 
             //get result
-            var result = this.Connection.ExecuteGetRequest(singleEndPoint, this);
+            var result = this.Connection.ExecuteGetRequest(reqUrl, this);
             this.Result = result;
         }
 
 
-        //TODO: Add Pagination support
+        //TODO: Add Pagination support?
         public void GetList()
         {
             //clear filter fields - whatever properties have been set on this request will be used for the query
@@ -104,7 +106,7 @@
 
         internal override IEnumerable<string> LinkedDataParams()
         {
-            return Field.GetLinkedDataParamsList(this.IncludeExtraData);
+            return FieldsList.GetLinkedDataParamsList(this.IncludeExtraData);
         }
 
         #endregion
